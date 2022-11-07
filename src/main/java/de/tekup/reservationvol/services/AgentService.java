@@ -16,16 +16,16 @@ public class AgentService {
     AgentRepository agentRepository;
 
     //get all Agents
-    public List<Agent> getEmployees() {
+    public List<Agent> getAgents() {
         return agentRepository.findAll();
     }
 
     //get employee by id
-    public ResponseEntity<Agent> getEmployee(long id) {
+    public ResponseEntity<Agent> getAgent(long id) {
 
-        Optional<Agent> optionalEmployee = agentRepository.findById(id);
-        if (optionalEmployee.isPresent()) {
-            return ResponseEntity.ok(optionalEmployee.get());
+        Optional<Agent> optionalAgent = agentRepository.findById(id);
+        if (optionalAgent.isPresent()) {
+            return ResponseEntity.ok(optionalAgent.get());
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

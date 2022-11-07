@@ -1,10 +1,19 @@
 package de.tekup.reservationvol.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Set;
 
-public class DepartureAirport {
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DepartureAirport extends Airport{
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "departureAirport")
     private Set<Flight> flights;
 }
