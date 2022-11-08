@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,5 +18,5 @@ public class Airline {
     private String name;
     private Integer review;
     @OneToMany(cascade=CascadeType.ALL, mappedBy = "airline")
-    private Set<Flight> flights;
+    private List<Flight> flights;
 }

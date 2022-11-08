@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,6 +17,6 @@ public class City {
     private long id;
     private String name;
     @OneToMany(cascade=CascadeType.ALL, mappedBy = "city")
-    private Set<Airport>airports;
+    private List<Airport> airports;
 
 }

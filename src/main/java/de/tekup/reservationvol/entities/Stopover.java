@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -15,8 +15,8 @@ public class Stopover {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private Date arrivalHour;
-    private Date departureHour;
+    private LocalDateTime arrivalHour;
+    private LocalDateTime departureHour;
     @ManyToOne
     private Flight flight;
     @ManyToOne

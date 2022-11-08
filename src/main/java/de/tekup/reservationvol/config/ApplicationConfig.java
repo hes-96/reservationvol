@@ -1,7 +1,6 @@
 package de.tekup.reservationvol.config;
 
-import java.util.Properties;
-
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -14,6 +13,9 @@ public class ApplicationConfig{
     return new RestTemplate();
   }
 
-
-
+  @Bean
+  public ModelMapper modelMapper() {
+    ModelMapper modelMapper = new ModelMapper();
+    return modelMapper;
+  }
 }

@@ -108,7 +108,7 @@ public class PassengerService {
 
 
     //get client by id
-    public ResponseEntity<Passenger> getClient(long id) {
+    public ResponseEntity<Passenger> getPassenger(long id) {
         Optional<Passenger> optionalPassenger = passengerRepository.findById(id);
         if (optionalPassenger.isPresent()) {
             return ResponseEntity.ok(optionalPassenger.get());

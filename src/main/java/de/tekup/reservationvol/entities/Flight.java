@@ -1,10 +1,12 @@
 package de.tekup.reservationvol.entities;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.util.Date;
-import java.util.Set;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,18 +19,18 @@ public class Flight {
         private long flightNumber;
         private String departureCity;
         private String arrivalCity;
-        private Date dateOfDeparture;
-        private Date estimationOfArrivalDate;
+        private LocalDateTime dateOfDeparture;
+        private LocalDateTime estimationOfArrivalDate;
         @ManyToOne
         private  Airline airline;
         @OneToMany (cascade=CascadeType.ALL, mappedBy = "flight")
-        private Set<Stopover> stopovers;
+        private List<Stopover> stopovers;
         @ManyToOne
         private Airport departureAirport;
         @ManyToOne
         private Airport arrivalAirport;
         @OneToMany (cascade=CascadeType.ALL, mappedBy = "flight")
-        private Set<Reservation> reservations;
+        private List<Reservation> reservations;
 
 
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,6 +20,6 @@ public class Airport {
     private City city;
 
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "airport")
-    private Set<Stopover> stopovers;
+    private List<Stopover> stopovers;
 
 }

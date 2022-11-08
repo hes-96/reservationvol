@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,5 +15,5 @@ import java.util.Set;
 @NoArgsConstructor
 public class DepartureAirport extends Airport{
     @OneToMany(cascade= CascadeType.ALL, mappedBy = "departureAirport")
-    private Set<Flight> flights;
+    private List<Flight> flights;
 }

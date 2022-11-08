@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -21,6 +21,6 @@ public class Agent {
     private String email;
     private String password;
     @OneToMany (cascade=CascadeType.ALL, mappedBy = "agent")
-    private Set<Reservation>reservations;
+    private List<Reservation> reservations;
 
 }
